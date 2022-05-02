@@ -177,7 +177,8 @@ resource "intersight_kubernetes_virtual_machine_infrastructure_provider" "master
 
 resource "intersight_kubernetes_cluster_profile" "kubeprofaction" {
   depends_on = [
-        intersight_kubernetes_node_group_profile.masternodegrp
+        intersight_kubernetes_node_group_profile.masternodegrp,
+	intersight_kubernetes_node_group_profile.workernodegrp
   ]
   action = "Deploy"
   name = intersight_kubernetes_cluster_profile.kubeprof.name
